@@ -1,0 +1,23 @@
+{
+  "name": "fastify-jsend",
+  "version": "1.0.0",
+  "description": "Utility methods to send JSend reponses directly from Fastify.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap ./test.js"
+  },
+  "keywords": [
+    "fastify",
+    "jsend"
+  ],
+  "author": "Buddhi Pathirane <buddhi.pathirane@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "fastify": "^1.14.1",
+    "fastify-plugin": "^1.5.0",
+    "tap": "^12.5.3"
+  },
+  "dependencies": {
+    "jsend": "^1.0.2"
+  }
+}
