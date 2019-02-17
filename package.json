@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "standard | snazzy",
     "lint-fix": "standard --fix",
-    "test": "tap ./test.js"
+    "test": "tap -R spec ./test.js"
   },
   "keywords": [
     "fastify",
