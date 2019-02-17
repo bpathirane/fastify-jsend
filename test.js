@@ -165,10 +165,11 @@ test('should add jsendSuccess', (t) => {
         method: 'GET',
         url: '/'
     }, (err, res) => {
-        t.error(err)
+        t.error(err, 'Should not throw an error')
         const respPayload = JSON.parse(res.body)
-        t.equals(respPayload.status, 'success')
-        t.looseEquals(respPayload.data, payload)
+
+        t.equals(respPayload.status, 'success', res.status == 'success')
+        t.looseEquals(respPayload.data, payload, 'Payload should match')
         t.end()
     })
 })
@@ -187,10 +188,10 @@ test('should add jsendFail', (t) => {
         method: 'GET',
         url: '/'
     }, (err, res) => {
-        t.error(err)
+        t.error(err, 'Should not throw an error')
         const respPayload = JSON.parse(res.body)
-        t.equals(respPayload.status, 'fail')
-        t.looseEquals(respPayload.data, payload)
+        t.equals(respPayload.status, 'fail', 'res.status == \'fail\'')
+        t.looseEquals(respPayload.data, payload, 'Payload should match')
         t.end()
     })
 })
@@ -209,10 +210,10 @@ test('should add jsendError', (t) => {
         method: 'GET',
         url: '/'
     }, (err, res) => {
-        t.error(err)
+        t.error(err, 'Payload should match')
         const respPayload = JSON.parse(res.body)
-        t.equals(respPayload.status, 'fail')
-        t.looseEquals(respPayload.data, payload)
+        t.equals(respPayload.status, 'fail', 'res.status == \'fail\'')
+        t.looseEquals(respPayload.data, payload, 'Payload should match')
         t.end()
     })
 })
