@@ -1,21 +1,38 @@
 'use strict'
 
 const fp = require('fastify-plugin')
-const jsend = require('jsend')
 
 module.exports = fp(function (fastify, options, next) {
-  function success (payload) {
-    var modifiedPayload = jsend.success(payload)
-    this.send(modifiedPayload)
-  }
+    const jsend = require('jsend')(options)
 
-  function fail(payload) {
-      this.send(jsend.fail(payload))
-  }
+    function defaultMethod(payload) {
+        if (payload instanceof Error) {
+            var error = {
+                message : payload.message ? payload.message : 'Unknown error - (fastify-jsend)'
+            }
+            error.code = payload.code
+            if (arguments.length > 1) {
+                var data = arguments[1]
+                error = Object.assign(error, data)
+            }
 
-  fastify.decorateReply('jsend', success)
-  fastify.decorateReply('jsendSuccess', success)
-  fastify.decorateReply('jsendFail', fail)
+            this.send(jsend.error(error))
+        } else {
+            this.jsendSuccess(...arguments)
+        }
+    }
 
-  next()
+    function success(payload) {
+        this.send(jsend.success(payload))
+    }
+
+    function fail(payload) {
+        this.send(jsend.fail(payload))
+    }
+
+    fastify.decorateReply('jsend', defaultMethod)
+    fastify.decorateReply('jsendSuccess', success)
+    fastify.decorateReply('jsendFail', fail)
+
+    next()
 })
