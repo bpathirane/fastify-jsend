@@ -1,8 +1,10 @@
 # fastify-jsend
 A fastify plugin which decorates fastify Reply with utility methods to send [JSend](//github.com/omniti-labs/jsend) compliant responses easily. Uses [jsend npm](https://www.npmjs.com/package/jsend) internaly.
-***
+
+
 ![npm version](https://img.shields.io/npm/v/fastify-jsend.svg?style=flat)
 ![npm license](https://img.shields.io/npm/l/fastify-jsend.svg?style=flat)
+![](https://img.shields.io/librariesio/release/bpathirane/fastify-jsend.svg?style=flat)
 ***
 ## Installation
 ```
