@@ -5,6 +5,7 @@ A fastify plugin which decorates fastify Reply with utility methods to send [JSe
 ![npm version](https://img.shields.io/npm/v/fastify-jsend.svg?style=flat)
 ![npm license](https://img.shields.io/npm/l/fastify-jsend.svg?style=flat)
 ![](https://img.shields.io/librariesio/release/bpathirane/fastify-jsend.svg?style=flat)
+[![Build Status](https://travis-ci.org/bpathirane/fastify-jsend.svg?branch=master)](https://travis-ci.org/bpathirane/fastify-jsend)
 ***
 ## Installation
 ```
