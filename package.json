@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Utility methods to send JSend reponses directly from Fastify.",
   "main": "index.js",
+  "repository": "github:bpathirane/fastify-jsend",
   "scripts": {
     "lint": "standard | snazzy",
     "lint-fix": "standard --fix",
