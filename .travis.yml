@@ -1,3 +1,11 @@
 language: node_js
 node_js:
-  - "7"
+  - '7'
+deploy:
+  provider: npm
+  email: buddhi.pathirane@gmail.com
+  api_key:
+    secure: V7fU8z73Ikdxv/3g5fZLNdJ5du7t78vSoZmURhAOyYFmLKe5ztjI4BDiwbZW9UgkevGwB+DZJtNNPyljFq1puWrOdR8MIkoe+7jpF9bXul1YQdsV5xlH1pNFORagSQIG0g8MVxY8KwsLat1joRCM9yyPdwbn5MKoDkgrY3xVmbzpWYJKv0SZUy1FoXSfrTPNOjoKtC7OvMInfN86su+9MkjfjarENlXtBp4diiebz9JruOmAnmqTPMZF+M6gKjafgelgrNp19A1/DrzYq/gYj0Ecpr6EItmLWkY9nlRxWoOyr/LIFM12DWJB2wrZRfFwnM8SVdp1Pab0UJHKwdJ8Kh+sYCdhSs5O1kS6nbqGxWeDOrBwkreRnUk6+ZNPPqyhEXNtOYGi0Bp/cQByR5ilhXsTRwOEO8e3vM2Q6HUvWKZXoq4b7p93UwoDLmcR5kueGOEMMTZBiU6HsydDAGX/3FqrHx3Ysi357u84hwZv7iENguHVPVDiFZksgFvgKQ1bYBjW1NdfU1zf0SCCj7ctpV54MkUH9+UUHdCHa/wnmC9JBm7Ss+leNVAZT4URIzBsqTFbJhzfqvaUIxGRAtgomDnPm1FBjC9LpHMQcQgEIcP8UN+rc5zE34dT3qoBk6SDlATLTCWZb25QXleW+kCwq3YKmCYb54CfQwt+mKT8QcU=
+  on:
+    tags: true
+    repo: bpathirane/fastify-jsend
