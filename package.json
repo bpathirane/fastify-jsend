@@ -1,6 +1,6 @@
 {
   "name": "fastify-jsend",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Utility methods to send JSend reponses directly from Fastify.",
   "main": "index.js",
   "repository": "github:bpathirane/fastify-jsend",
