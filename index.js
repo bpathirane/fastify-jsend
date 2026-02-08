@@ -22,14 +22,16 @@ module.exports = fp(function (fastify, options, next) {
   }
 
   function error (payload) {
-    var error = {
+    const error = {
       message: payload.message ? payload.message : 'Unknown error - (fastify-jsend)'
     }
     error.code = payload.code
     error.data = payload.data
     if (arguments.length > 1) {
-      var data = arguments[1]
-      error = Object.assign(error, data)
+      const data = arguments[1]
+      if (data.message !== undefined) error.message = data.message
+      if (data.code !== undefined) error.code = data.code
+      if (data.data !== undefined) error.data = data.data
     }
 
     this.send(jsend.error(error))
